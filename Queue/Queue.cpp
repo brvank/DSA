@@ -14,7 +14,6 @@ class Queue{
 		Node * front;
 		Node * back;
 		Node * temp;
-		int data;
 		int count;
 		
 	public:
