@@ -144,11 +144,12 @@ class CircularLinkedList{
 			}else{
 				temp1 = head;
 				temp2 = temp1;
-				while(temp1->next!=NULL){
+				while(temp1->next!=head){
 					temp2 = temp1;
 					temp1 = temp1->next;
 				}
-				temp2->next=NULL;
+				temp2->next=head;
+				tail = temp2;
 				delete temp1;
 				count--;
 			}
@@ -200,6 +201,7 @@ int main(){
 	cll.getFrom(23);
 	cll.deleteFrom(6);
 	cll.addAt(23,6);
+	cll.deleteLast();
 	cll.printList();
 	cout<<cll.getLast()<<"\n";
 	cout<<cll.getSize();

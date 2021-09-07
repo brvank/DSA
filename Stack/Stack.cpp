@@ -97,7 +97,6 @@ int main(){
 	st.pop();
 	st.pop();
 	cout<<st.getTop()<<endl;
-	cout<<st.getTop()<<endl;
 	cout<<st.getSize()<<endl;
 	return 0;
 }
