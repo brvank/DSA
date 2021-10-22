@@ -7,23 +7,31 @@ using namespace std;
 //******************* test for dynamic matrix creation
 int main(){
 	
-	int ** matrix;
-	matrix = new int*;
-	int order;
-	cout<<"Enter the order of unit matrix: ";
-	cin>>order;
-	for(int i=0;i<order;i++){
-		(*matrix + i ) = new int[order];
-		for(int j=0;j<order;j++){
-			*((*matrix+i)+j) = 1;
-		}
+	int **matrix;
+	int r,c;
+	cout<<"Enter the rows and columns : ";
+	cin>>r>>c;
+	
+	matrix = new int*[r];
+	
+	for(int i=0;i<r;i++){
+		*(matrix + i) = new int[c];
+		//alternative way
+		//matrix[i] = new int[c];
+		for(int j=0;j<c;j++){
+			*(*(matrix + i) + j) = j;
+			//alternative way
+			//matrix[i][j] = j;
+		} 
 	}
 	
-	for(int i=0;i<order;i++){
-		for(int j=0;j<order;j++){
-			cout<<*(*(matrix+i)+j)<<" "; 
+	for(int i=0;i<r;i++){
+		for(int j=0;j<c;j++){
+			cout<<*(*(matrix + i) +j)<<" ";
+			//alternative way
+			//matrix[i][j]<<" ";
 		}
-		cout<<"\n";
+		cout<<endl;
 	}
 	
 	return 0;

@@ -44,6 +44,9 @@ class Queue{
 		void pop(){
 			if(front == NULL){
 				cout<<"Warning: Queue is empty!\n";
+			}else if(front == back){
+				delete back;
+				front = back = NULL;
 			}else{
 				temp = front->next;
 				delete front;
@@ -90,6 +93,7 @@ int main(){
 	cout<<q.getFront();
 	q.pop();
 	q.push(23);
+	q.pop();
 	q.push(24);
 	q.push(25);
 	q.push(26);

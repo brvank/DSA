@@ -48,9 +48,11 @@ int main(){
 	
 	int arr[] = {3,2,5,-89,-56,3,1,6,36,22,64,1,7};
 	
-	printArray(arr, 11);
-	mergeSort(arr, 0, 10);
-	printArray(arr, 11);
+	int n = sizeof(arr)/sizeof(arr[0]);
+	
+	printArray(arr, n);
+	mergeSort(arr, 0, n-1);
+	printArray(arr, n);
 	
 	return 0;
 }

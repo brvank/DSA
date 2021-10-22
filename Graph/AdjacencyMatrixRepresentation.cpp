@@ -11,26 +11,26 @@ class Graph{
 		Graph(int v){
 			cout<<"Default graph created: \n";
 			vertices = v;
-			adjMat = new int*;
+			adjMat = new int*[vertices];
 			for(int i=0; i<v; i++){
-				*(adjMat + i) = new int;
+				adjMat[i] = new int[vertices];
 				for(int j=0; j<v; j++){
-					*(*(adjMat+i)+j) = 0;
-					cout<<*(*(adjMat+i)+j)<<" ";
+					adjMat[i][j] = 0;
+					cout<<adjMat[i][j]<<" ";
 				}
 				cout<<"\n";
 			}
 		}
 		
 		void addEdge(int from, int to, int data){
-			*(*(adjMat+from) + to) = data;
+			adjMat[from][to] = data;
 		}
 		
 		void printGraph(){
 			cout<<"\nNew graph: \n";
 			for(int i=0; i<vertices; i++){
 				for(int j=0; j<vertices; j++){
-					cout<<**((adjMat+i)+j)<<" ";
+					cout<<adjMat[i][j]<<" ";
 				}
 				cout<<"\n";
 			}
